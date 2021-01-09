@@ -20,7 +20,9 @@ export class HomePageComponent implements OnInit {
   }
 
   getLists() {
-    this.lists = this.service.getLists("User 1");
+    this.service.getLists("00000000-0000-0000-0000-000000000000").subscribe((res) => {
+      this.lists = res;
+    });
   }
 
 }

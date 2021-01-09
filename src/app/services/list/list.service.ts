@@ -8,33 +8,12 @@ import { Observable, of } from 'rxjs';
 })
 export class ListService {
 
-  lists: List[] = [
-    {
-      id: "List #1 id",
-      title: "List #1 title",
-      totalItems: 3,
-      userId: "User 1"
-    },
-    {
-      id: "List #2 id",
-      title: "List #2 title",
-      totalItems: 3,
-      userId: "User 1"
-    }
-  ]
-
-  constructor() { 
+  constructor(private httpClient:  HttpClient) { 
     
   }
 
-  getLists(id: string): List[] {
-    var userLists: List[] = [];
-    this.lists.forEach(list => {
-      if (list.userId == id) {
-        userLists.push(list);
-      }
-    });
-    return userLists;
+  getLists(id: string): Observable<any> {
+    return this.httpClient.get(`https://localhost:5010/api/list/user/${id}`);
   }
 
   createList() {
