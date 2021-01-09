@@ -1,6 +1,8 @@
 <div class="list__container">
     <li *ngFor="let list of lists">
-        {{ list.title }}
-        ({{ list.totalItems }})
+        <button (click)="toListDetails()">
+            {{ list.title }}
+            ({{ list.totalItems }})
+        </button>
     </li>   
 </div>

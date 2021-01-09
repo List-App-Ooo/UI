@@ -1,6 +1,8 @@
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { ListService } from './../services/list/list.service';
 import { List } from './../models/list.model';
-import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home-page',
@@ -11,11 +13,12 @@ export class HomePageComponent implements OnInit {
 
   lists: List[]
   
-  constructor(private readonly service: ListService) {
+  constructor(private readonly service: ListService, private router: Router) {
     this.lists = [];
    }
 
   ngOnInit(): void {
+    this.router.events.subscribe();
     this.getLists();
   }
 
@@ -25,4 +28,7 @@ export class HomePageComponent implements OnInit {
     });
   }
 
+  toListDetails() {
+    this.router.navigate(['list-details']);
+  }
 }

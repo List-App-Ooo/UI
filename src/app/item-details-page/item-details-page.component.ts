@@ -1,3 +1,4 @@
+import { ListDetailsService } from './../services/list-details/list-details.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemDetailsPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: ListDetailsService) {
+    
+   }
 
   ngOnInit(): void {
   }
