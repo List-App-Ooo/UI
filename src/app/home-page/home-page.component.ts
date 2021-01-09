@@ -20,10 +20,7 @@ export class HomePageComponent implements OnInit {
   }
 
   getLists() {
-    var arr = this.service.getLists("User 1");
-    arr.forEach(list => {
-      this.lists.push(list);
-    });;
+    this.lists = this.service.getLists("User 1");
   }
 
 }
