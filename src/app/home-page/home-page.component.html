@@ -1,8 +1,6 @@
 <div class="list__container">
     <li *ngFor="let list of lists">
-        {{ list.id }}
         {{ list.title }}
-        {{ list.totalItems }}
-        {{ list.userId }}
+        ({{ list.totalItems }})
     </li>   
 </div>
