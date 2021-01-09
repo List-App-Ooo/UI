@@ -1,3 +1,4 @@
+import { ListService } from './../services/list/list.service';
 import { List } from './../models/list.model';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,13 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-  lists: List[];
-
-  constructor() {
+  lists: List[]
+  
+  constructor(private readonly service: ListService) {
     this.lists = [];
    }
 
   ngOnInit(): void {
+    this.getLists();
+  }
+
+  getLists() {
+    var arr = this.service.getLists("User 1");
+    arr.forEach(list => {
+      this.lists.push(list);
+    });;
   }
 
 }

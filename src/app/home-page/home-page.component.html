@@ -1,1 +1,8 @@
-<p>home-page works!</p>
+<div class="list__container">
+    <li *ngFor="let list of lists">
+        {{ list.id }}
+        {{ list.title }}
+        {{ list.totalItems }}
+        {{ list.userId }}
+    </li>   
+</div>
