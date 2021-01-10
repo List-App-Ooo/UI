@@ -14,6 +14,7 @@ export class ListDetailsPageComponent implements OnInit {
 
   itemedList: ListUI;
   items: Item[];
+  uri: string;
 
   constructor(private service: ListDetailsService, private router: Router) {
     this.itemedList = {
@@ -25,11 +26,14 @@ export class ListDetailsPageComponent implements OnInit {
     }
 
     this.items = [];
+
+    this.uri = "";
   }
 
   ngOnInit(): void {
     this.router.events.subscribe();
-    this.getItemedList("ef6a7925-80a6-44bc-9e03-89bc7ca3586e");
+    this.uri = this.router.url;
+    this.getItemedList(this.uri);
   }
 
   getItemedList(id: string) {

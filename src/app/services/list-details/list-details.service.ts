@@ -11,7 +11,7 @@ export class ListDetailsService {
     
   }
 
-  getListDetails(id: string): Observable<any> {
-    return this.httpClient.get(`https://localhost:5010/api/list/${id}`);
+  getListDetails(uri: string): Observable<any> {
+    return this.httpClient.get(`https://localhost:5010/api${uri}`);
   }
 }

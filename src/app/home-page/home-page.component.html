@@ -1,8 +1,10 @@
 <div class="list__container">
-    <h1>Lists</h1>
+    <h1>My Lists</h1>
     <ul *ngFor="let list of lists">
-        <li (click)="toListDetails()">
-            {{ list.title }} | Item Count: {{ list.totalItems }}
-        </li>
+        <a [routerLink]="['/list', list.id]">
+            <li (click)="toListDetails(list.id)">
+                {{ list.title }} | Item Count: {{ list.totalItems }}
+            </li>
+        </a>
     </ul>   
 </div>

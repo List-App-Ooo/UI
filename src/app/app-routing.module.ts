@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   { component: HomePageComponent, path: '' },
-  { component: ListDetailsPageComponent, path: 'list-details'},
+  { component: ListDetailsPageComponent, path: 'list/:id'},
   { component: ItemDetailsPageComponent, path: 'item-details' }
 ];
 
