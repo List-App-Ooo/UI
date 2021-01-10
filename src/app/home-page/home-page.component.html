@@ -2,8 +2,7 @@
     <h1>Lists</h1>
     <ul *ngFor="let list of lists">
         <li (click)="toListDetails()">
-            {{ list.title }}
-            {{ list.totalItems }}
+            {{ list.title }} | Item Count: {{ list.totalItems }}
         </li>
     </ul>   
 </div>
