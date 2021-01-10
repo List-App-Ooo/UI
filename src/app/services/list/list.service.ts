@@ -1,4 +1,3 @@
-import { List } from './../../models/list.model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';

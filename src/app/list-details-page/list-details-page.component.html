@@ -1,1 +1,8 @@
-<p>list-details-page works!</p>
+<div>
+    <h1>{{ itemedList.title }}</h1> 
+    <ul *ngFor="let item of items">
+        <li>
+            {{ item.title }}
+        </li>
+    </ul>
+</div>

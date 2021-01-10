@@ -19,11 +19,11 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.router.events.subscribe();
-    this.getLists();
+    this.getLists("00000000-0000-0000-0000-000000000000");
   }
 
-  getLists() {
-    this.service.getLists("00000000-0000-0000-0000-000000000000").subscribe((res) => {
+  getLists(id: string) {
+    this.service.getLists(id).subscribe((res) => {
       this.lists = res;
     });
   }

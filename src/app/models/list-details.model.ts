@@ -5,5 +5,5 @@ export interface ListUI {
     title: string;
     totalItems: number;
     userId: string;
-    list: Item[];
+    items: Item[];
 }
