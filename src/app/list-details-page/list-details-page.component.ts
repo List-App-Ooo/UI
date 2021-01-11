@@ -44,7 +44,7 @@ export class ListDetailsPageComponent implements OnInit {
   }
 
   toItemDetails(id: string) {
-    this.router.navigate(['item-details']);
+    this.router.navigate(['item/:id']);
   }
 
   toHomePage() {

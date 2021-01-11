@@ -1,12 +1,12 @@
 <div class="list-detail__container">
     <h1>{{ itemedList.title }}</h1> 
     <ul *ngFor="let item of items">
-        <!-- <a [routerLink]="['/item', item.id]">
-        </a> -->
-        <li (click)="toItemDetails(item.id)">
-            {{ item.title }} |
-            {{ item.desc }}
-        </li>
+        <a [routerLink]="['/item', item.id]">
+            <li (click)="toItemDetails(item.id)">
+                {{ item.title }} |
+                {{ item.timeStamp }}
+            </li>
+        </a>
     </ul>
-    <button (click)="toHomePage()">Back</button>
+    <button (click)="toHomePage()">Back To Lists</button>
 </div>
