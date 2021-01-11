@@ -43,6 +43,10 @@ export class ListDetailsPageComponent implements OnInit {
     });
   }
 
+  toItemDetails(id: string) {
+    this.router.navigate(['item-details']);
+  }
+
   toHomePage() {
     this.router.navigate([""])
   }
