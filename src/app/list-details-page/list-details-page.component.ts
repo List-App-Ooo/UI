@@ -43,9 +43,9 @@ export class ListDetailsPageComponent implements OnInit {
     });
   }
 
-  toItemDetails(id: string) {
-    this.router.navigate(['item/:id']);
-  }
+  // toItemDetails(id: string) {
+  //   this.router.navigate(['item/{id}']);
+  // }
 
   toHomePage() {
     this.router.navigate([""])

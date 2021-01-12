@@ -31,11 +31,6 @@ export class ItemDetailsPageComponent implements OnInit {
     this.getItemDetails(this.uri);
   }
 
-  toListDetails(id: string) {
-    this.router.navigate(['list/:id']);
-    console.log(this.uri);
-  }
-
   getItemDetails(uri: string) {
     this.idService.getItemDetails(uri).subscribe((res) => {
       this.item = res;

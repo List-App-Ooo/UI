@@ -2,7 +2,7 @@
     <h1>My Lists</h1>
     <ul *ngFor="let list of lists">
         <a [routerLink]="['/list', list.id]">
-            <li (click)="toListDetails(list.id)">
+            <li>
                 {{ list.title }} | 
                 Item Count: {{ list.totalItems }}
             </li>

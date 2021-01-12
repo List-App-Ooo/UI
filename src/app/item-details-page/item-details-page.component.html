@@ -1,7 +1,5 @@
 <div class="item-detail__container">
     <h1>{{ item.title }}</h1>
     <p>{{ item.desc }}</p>
-    <a [routerLink]="['/list', item.listId]">
-        <button (click)="toListDetails(item.listId)">Back To List</button>
-    </a>    
+    <button [routerLink]="['/list', item.listId]">Back To List</button>
 </div>
