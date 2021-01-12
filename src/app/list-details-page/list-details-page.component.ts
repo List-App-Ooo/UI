@@ -2,6 +2,7 @@ import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 import { ListDetailsService } from './../services/list-details/list-details.service';
+import { ItemDetailsService } from './../services/item-details/item-details.service';
 import { ListUI } from '../models/list-details.model';
 import { Item } from '../models/item-details.model';
 
@@ -16,7 +17,7 @@ export class ListDetailsPageComponent implements OnInit {
   items: Item[];
   uri: string;
 
-  constructor(private service: ListDetailsService, private router: Router) {
+  constructor(private service: ListDetailsService, private itemService: ItemDetailsService, private router: Router) {
     this.itemedList = {
       id: "",
       title: "",
@@ -43,9 +44,11 @@ export class ListDetailsPageComponent implements OnInit {
     });
   }
 
-  // toItemDetails(id: string) {
-  //   this.router.navigate(['item/{id}']);
-  // }
+  deleteItem(id: string) {
+    this.itemService.deleteItem(id);
+    this.getItemedList(this.uri);
+    console.log(id);
+  }
 
   toHomePage() {
     this.router.navigate([""])

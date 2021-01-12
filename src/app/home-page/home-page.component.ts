@@ -27,8 +27,4 @@ export class HomePageComponent implements OnInit {
       this.lists = res;
     });
   }
-
-  // toListDetails(id: string) {
-  //   this.router.navigate(['list/:id']);
-  // }
 }

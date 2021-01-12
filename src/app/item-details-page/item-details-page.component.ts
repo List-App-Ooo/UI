@@ -36,5 +36,4 @@ export class ItemDetailsPageComponent implements OnInit {
       this.item = res;
     });
   }
-
 }

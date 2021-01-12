@@ -12,4 +12,8 @@ export class ItemDetailsService {
   getItemDetails(uri: string): Observable<any> {
     return this.httpClient.get(`https://localhost:5010/api${uri}`);
   }
+
+  deleteItem(uri: string) {
+    this.httpClient.delete(`https://localhost:5010/api/item/${uri}`);
+  }
 }

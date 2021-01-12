@@ -1,7 +1,7 @@
 <div class="list-detail__container">
     <h1>{{ itemedList.title }}</h1> 
     <div *ngFor="let item of items">
-        <button>Delete</button>
+        <button (click)="deleteItem(item.id)">Delete</button>
         <a [routerLink]="['/item', item.id]">
             {{ item.title }} |
             {{ item.desc }}
