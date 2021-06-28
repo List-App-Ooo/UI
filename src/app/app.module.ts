@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ListDetailsPageComponent } from './list-details-page/list-details-page.component';
 import { ItemDetailsPageComponent } from './item-details-page/item-details-page.component';
-import { ListComponent } from './list/list.component';
+import { RedirectComponent } from './redirect/redirect.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import { ListComponent } from './list/list.component';
     HomePageComponent,
     ListDetailsPageComponent,
     ItemDetailsPageComponent,
-    ListComponent
+    RedirectComponent
   ],
   imports: [
     BrowserModule,

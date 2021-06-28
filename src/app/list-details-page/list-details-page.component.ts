@@ -1,10 +1,10 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
-import { ListDetailsService } from './../services/list-details/list-details.service';
-import { ItemDetailsService } from './../services/item-details/item-details.service';
-import { ListUI } from '../models/list-details.model';
-import { Item } from '../models/item-details.model';
+import { ListService } from './../services/list/list.service';
+import { ItemService } from '../services/item/item.service';
+import { ItemedList } from '../models/itemed-list.model';
+import { Item } from '../models/item.model';
 
 @Component({
   selector: 'app-list-details-page',
@@ -13,11 +13,11 @@ import { Item } from '../models/item-details.model';
 })
 export class ListDetailsPageComponent implements OnInit {
 
-  itemedList: ListUI;
+  itemedList: ItemedList;
   items: Item[];
   uri: string;
 
-  constructor(private service: ListDetailsService, private itemService: ItemDetailsService, private router: Router) {
+  constructor(private listService: ListService, private itemService: ItemService, private router: Router) {
     this.itemedList = {
       id: "",
       title: "",
@@ -34,20 +34,26 @@ export class ListDetailsPageComponent implements OnInit {
   ngOnInit(): void {
     this.router.events.subscribe();
     this.uri = this.router.url;
-    this.getItemedList(this.uri);
+    this.getItems(this.uri);
   }
 
-  getItemedList(id: string) {
-    this.service.getListDetails(id).subscribe((res) => {
+  getItems(id: string) {
+    this.listService.getItemedList(id).subscribe((res) => {
       this.itemedList = res;
       this.items = this.itemedList.items;
     });
   }
 
   deleteItem(id: string) {
-    this.itemService.deleteItem(id);
-    this.getItemedList(this.uri);
-    console.log(id);
+    this.itemService.deleteItem(id).subscribe((res) => {
+      // console.log(res);
+      this.getItems(this.uri);
+    });
+  }
+
+  reloadPage(id: string) {
+    this.router.navigateByUrl('redirect', {skipLocationChange: true}).then(()=>
+    this.router.navigate(["list/{id}"]));
   }
 
   toHomePage() {

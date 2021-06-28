@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ItemDetailsService {
+export class ItemService {
 
   constructor(private httpClient: HttpClient) { }
 
@@ -13,7 +13,11 @@ export class ItemDetailsService {
     return this.httpClient.get(`https://localhost:5010/api${uri}`);
   }
 
-  deleteItem(uri: string) {
-    this.httpClient.delete(`https://localhost:5010/api/item/${uri}`);
+  createItem() {
+
+  }
+
+  deleteItem(id: string) {
+    return this.httpClient.delete(`https://localhost:5010/api/item/${id}`);
   }
 }

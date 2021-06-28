@@ -11,11 +11,19 @@ export class ListService {
     
   }
 
+  getItemedList(uri: string): Observable<any> {
+    return this.httpClient.get(`https://localhost:5010/api${uri}`);
+  }
+
   getLists(id: string): Observable<any> {
     return this.httpClient.get(`https://localhost:5010/api/list/user/${id}`);
   }
 
   createList() {
 
+  }
+
+  deleteList(id: string) {
+    
   }
 }

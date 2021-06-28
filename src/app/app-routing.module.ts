@@ -1,3 +1,4 @@
+import { RedirectComponent } from './redirect/redirect.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -8,7 +9,8 @@ import { HomePageComponent } from './home-page/home-page.component';
 const routes: Routes = [
   { component: HomePageComponent, path: '' },
   { component: ListDetailsPageComponent, path: 'list/:id' },
-  { component: ItemDetailsPageComponent, path: 'item/:id' }
+  { component: ItemDetailsPageComponent, path: 'item/:id' },
+  { component: RedirectComponent, path: 'redirect' }
 ];
 
 @NgModule({

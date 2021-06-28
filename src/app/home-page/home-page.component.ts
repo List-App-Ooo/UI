@@ -13,9 +13,9 @@ export class HomePageComponent implements OnInit {
 
   lists: List[]
   
-  constructor(private readonly service: ListService, private router: Router) {
+  constructor(private readonly listService: ListService, private router: Router) {
     this.lists = [];
-   }
+  }
 
   ngOnInit(): void {
     this.router.events.subscribe();
@@ -23,7 +23,7 @@ export class HomePageComponent implements OnInit {
   }
 
   getLists(id: string) {
-    this.service.getLists(id).subscribe((res) => {
+    this.listService.getLists(id).subscribe((res) => {
       this.lists = res;
     });
   }

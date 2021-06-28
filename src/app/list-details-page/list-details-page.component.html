@@ -4,8 +4,10 @@
         <button (click)="deleteItem(item.id)">Delete</button>
         <a [routerLink]="['/item', item.id]">
             {{ item.title }} |
+            {{ item.timeStamp }} |
             {{ item.desc }}
         </a>
     </div>
     <button (click)="toHomePage()">Back To Lists</button>
+    <button>Add New Item</button>
 </div>

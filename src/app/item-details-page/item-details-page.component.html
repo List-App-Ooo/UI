@@ -1,5 +1,6 @@
 <div class="item-detail__container">
     <h1>{{ item.title }}</h1>
+    <h4>{{ item.timeStamp }}</h4>
     <p>{{ item.desc }}</p>
     <button [routerLink]="['/list', item.listId]">Back To List</button>
 </div>

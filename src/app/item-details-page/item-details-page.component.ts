@@ -1,5 +1,5 @@
-import { ItemDetailsService } from './../services/item-details/item-details.service';
-import { Item } from './../models/item-details.model';
+import { ItemService } from '../services/item/item.service';
+import { Item } from '../models/item.model';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -13,7 +13,7 @@ export class ItemDetailsPageComponent implements OnInit {
   item: Item;
   uri: string;
 
-  constructor(private idService: ItemDetailsService, private router: Router) {
+  constructor(private itemService: ItemService, private router: Router) {
     this.item = {
       id: "",
       title: "",
@@ -32,7 +32,7 @@ export class ItemDetailsPageComponent implements OnInit {
   }
 
   getItemDetails(uri: string) {
-    this.idService.getItemDetails(uri).subscribe((res) => {
+    this.itemService.getItemDetails(uri).subscribe((res) => {
       this.item = res;
     });
   }
